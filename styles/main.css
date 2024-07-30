@@ -645,6 +645,10 @@ video {
   height: 100vh;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -788,7 +792,7 @@ body {
   font-size: 14px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }

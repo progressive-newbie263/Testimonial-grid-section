@@ -13,11 +13,6 @@ module.exports = {
       darkGrayishBlue: "hsl(217, 19%, 35%)",
       darkBlackishBlue: "hsl(219, 29%, 14%)"
     },
-
-    // screens: {
-    //   'md': '900px',
-    // },
-
     extend: {},
   },
 
