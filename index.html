@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <!-- Tailwind CSS CDN link, first try-->
   <!--this works, confirmed.-->
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/input.css">
 
   <!--Barlow Semi Condensed-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,63 +19,166 @@
   <title>Frontend Mentor | [Challenge Name Here]</title>
 </head>
 
-<body class="md:flex">
-  Daniel Clifford
-  Verified Graduate
+<!--remember: min-height: 100vh in tailwind is h-screen-->
+<!--
+  screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
 
-  I received a job offer mid-course, and the subjects I learned were current, if not more so, 
-  in the company I joined. I honestly feel I got every penny's worth.
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
 
-  “ I was an EMT for many years before I joined the bootcamp. I've been looking to make a 
-  transition and have heard some people who had an amazing experience here. I signed up 
-  for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
-  The next 12 weeks was the best - and most grueling - time of my life. Since completing 
-  the course, I've successfully switched careers, working as a Software Engineer at a VR startup. ”
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
 
-  Jonathan Walters
-  Verified Graduate
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
 
-  The team was very supportive and kept me motivated
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    }
+-->
+<body class="bg-lightGray">
+  <!--i will use grid here. The 4 card left section will take 80% of the width while the seperate card take 20% width-->
+  <main class="h-screen px-5 py-12 min-w-[425px] md:grid md:grid-flow-col md:gap-5">
+    <!--4 card grid section -->
+    <div class="md:col-span-10 md:grid md:grid-cols-3 md:gap-5">
+      <!--daniel-->
+      <div class="bg-quote-image bg-violet text-white flex flex-col h-fit my-4 p-10 rounded-lg relative
+        col-start-1 col-end-3 md:h-full
+      ">
+        <div class="flex flex-row items-center">
+          <img class="w-10 h-10 rounded-full border-solid border-2 border-white" alt="Daniel-pfp" src="images/image-daniel.jpg">
 
-  “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
-  for a big company. This was one of the best investments I've made in myself. ”
+          <div class="flex flex-col ml-5">
+            <span class="text-lg font-semibold">Daniel Clifford</span>
+            <span class="text-sm opacity-70">Verified Graduate</span>
+          </div>
 
-  Jeanette Harmon
-  Verified Graduate
+          <img class="absolute z-0 right-10 top-0 w-32" alt="quote-mark" src="images/bg-pattern-quotation.svg">
+        </div>
+        
+        <span class="text-2xl font-semibold my-4 z-10">
+          I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+          in the company I joined. I honestly feel I got every penny's worth.
+        </span>
+        
+        <p class="text-white opacity-70">
+          “ I was an EMT for many years before I joined the bootcamp. I've been looking to make a 
+          transition and have heard some people who had an amazing experience here. I signed up 
+          for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
+          The next 12 weeks was the best - and most grueling - time of my life. Since completing 
+          the course, I've successfully switched careers, working as a Software Engineer at a VR startup. ”
+        </p>
+      </div>
+      
+      <!--jonathan-->
+      <div class="bg-darkGrayishBlue text-white flex flex-col h-fit my-4 p-10 rounded-lg
+        md:h-full
+      ">
+        <div class="flex flex-row items-center">
+          <img class="w-10 h-10 rounded-full border-solid border-2 border-white" alt="Jonathan" src="images/image-jonathan.jpg">
 
-  An overall wonderful and rewarding experience
+          <div class="flex flex-col ml-5">
+            <span class="text-lg font-semibold">Jonathan Walters</span>
+            <span class="text-sm opacity-70">Verified Graduate</span>
+          </div>
+        </div>
+    
+        <span class="text-2xl font-semibold my-4 z-10">
+          The team was very supportive and kept me motivated
+        </span>
+    
+        <p class="opacity-70">
+          “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
+          for a big company. This was one of the best investments I've made in myself. ”
+        </p>
+      </div>
+    
+      <!--jeanette-->
+      <div class="bg-white text-darkGrayishBlue flex flex-col h-fit my-4 p-10 rounded-lg
+        md:h-full
+      ">
+        <div class="flex flex-row items-center">
+          <img class="w-10 h-10 rounded-full border-solid border-2 border-white" alt="Jeanette-pfp" src="images/image-jeanette.jpg">
 
-  “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
-  while doing something I love. ”
+          <div class="flex flex-col ml-5">
+            <span class="text-lg font-semibold">Jeanette Harmon</span>
+            <span class="text-sm opacity-70">Verified Graduate</span>
+          </div>
+        </div>
+    
+        <span class="text-2xl font-semibold my-4 z-10">
+          An overall wonderful and rewarding experience
+        </span>
+    
+        <p class="opacity-70">
+          “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
+          while doing something I love. ”
+        </p>
+      </div>
+    
+      <!--patrick-->
+      <div class="bg-darkBlackishBlue text-white flex flex-col h-fit my-4 p-10 rounded-lg
+        col-start-2 col-end-4 md:h-full
+      ">
+        <div class="flex flex-row items-center">
+          <img class="w-10 h-10 rounded-full border-solid border-2 border-white" alt="Patrick-pfp" src="images/image-patrick.jpg">
 
-  Patrick Abrams
-  Verified Graduate
-
-  Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
-  learning from their experiences was easy.
-
-  “ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
-  gave me the confidence necessary to be able to go out in the world and present myself as a capable 
-  junior developer. The standard is above the rest. You will get the personal attention you need from 
-  an incredible community of smart and amazing people. ”
-
-  Kira Whittle
-  Verified Graduate
-
-  Such a life-changing experience. Highly recommended!
-
-  “ Before joining the bootcamp, I've never written a line of code. I needed some structure from 
-  professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
-  student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
-  did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
-  project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
-  could ever have. In fact, I've often referred to it during interviews as an example of my developent 
-  experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
-  100% recommend! ”
+          <div class="flex flex-col ml-5">
+            <span class="text-lg font-semibold">Patrick Abrams</span>
+            <span class="text-sm  opacity-70">Verified Graduate</span>
+          </div>
+        </div>
+    
+        <span class="text-2xl font-semibold my-4 z-10">
+          Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
+          learning from their experiences was easy.
+        </span>
+    
+        <p class="opacity-70">
+          “ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
+          gave me the confidence necessary to be able to go out in the world and present myself as a capable 
+          junior developer. The standard is above the rest. You will get the personal attention you need from 
+          an incredible community of smart and amazing people. ”
+        </p>
+      </div>
+    </div>
+    
+    <!--right grid section for big screen-->
+    <!--Kira Whittle-->
+    <div class="md:col-span-1">
+      <div class="bg-white flex flex-col h-fit my-4 p-5 rounded-lg mb-10 text-darkBlackishBlue md:h-full">
+        <div class="flex flex-row items-center">
+          <img class="w-10 h-10 rounded-full border-solid border-2 border-white" alt="Kira-pfp" src="images/image-kira.jpg">
   
-  <div class="attribution">
+          <div class="flex flex-col ml-5">
+            <span class="text-lg font-semibold">Kira Whittle</span>
+            <span class="text-sm opacity-70">Verified Graduate</span>
+          </div>
+        </div>
+    
+        <span class="text-2xl font-semibold my-4 z-10">
+          Such a life-changing experience. Highly recommended!
+        </span>
+    
+        <p class="opacity-70">
+          “ Before joining the bootcamp, I've never written a line of code. I needed some structure from 
+          professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
+          student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
+          did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
+          project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
+          could ever have. In fact, I've often referred to it during interviews as an example of my developent 
+          experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
+          100% recommend! ”
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- <div class="absolute bottom-0 mx-auto left-0 right-0 w-96">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://www.frontendmentor.io/profile/progressive-newbie263" target="_blank">JackFrost</a>.
+  </div> -->
 </body>
 </html>
